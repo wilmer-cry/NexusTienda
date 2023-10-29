@@ -1,0 +1,46 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    position: fixed; /* Hace que el encabezado sea estático */
+    top: 0; /* Lo fija en la parte superior de la ventana */
+    left: 14.5%; /* Margen izquierdo del 20% */
+    right: 0; /* Ocupa todo el ancho disponible */
+    background-color: #333;
+    color: #fff;
+    padding-right: 30px;
+    padding-left: -10px;
+    padding-bottom: -50px;
+
+}
+
+
+.navbar-menu {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.navbar-menu li {
+    margin-left: 20px;
+        
+}
+.navbar-menu li :hover{
+    margin-left: 20px;
+    background-color: red;
+    color: #fff;
+    padding: 7px 3px;
+
+}
+.navbar-menu li a {
+    text-decoration: none;
+    color: #fff;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 5px;
+}

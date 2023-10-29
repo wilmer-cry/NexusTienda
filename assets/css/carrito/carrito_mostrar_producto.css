@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.column{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    #botonpagar{
+        background-color: #1a1224;
+        color: #fff;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 10px;
+        padding-bottom: 25px;
+        border-radius: 7px;
+
+    }
+    #botonpagar:hover{
+        background-color: #11c700;
+        color: #fff;
+    }
+
+    #tablaCarrito{
+        width: 100%;
+        border-color: black 1px !important;
+     
+    }
+    #tablaCarrito th{
+        border-radius: 10px !important;
+        border-color: black 1px;
+        background-color: #1a1224;
+        color: #fff;
+        width: 15%;
+        font-size: 12px;
+    }
+    #cellcantidad{
+        background-color: #1a1224;
+        text-align: center;
+    }
+
+    #tablaCarrito tr td{
+        border-radius: 10px !important;
+        border-color: black 1px;
+        background-color: #ff95951c;
+        color: #040404;
+        width: 15%;
+        font-size: 12px;
+    }
+
+    #ingresocantidadnueva{
+        width: 40%;
+        padding: 3px;
+        border-radius: 7px;
+        border-color: #fff;
+    }
+    #botonActualziar{
+        border-radius: 8px;
+        background-color: #2db500;
+        color: #ffffff;
+    }
+
+    #mensajeAct{
+        background-color:#2db500;
+        color: #fff;
+        width: 20%;
+        border-bottom-right-radius: 15px;
+        border-top-right-radius: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
+    }
+    #mensajeNoAct{
+        background-color:#fd0000;
+        color: #fff;
+        width: 20%;
+        border-bottom-right-radius: 15px;
+        border-top-right-radius: 15px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        text-align: center;
+    }
+    #eliminarRegistro{
+        padding: 2%;
+        background-color: #fd0000;
+        border-radius: 8px;
+        color: #fff;
+        text-align: center;
+
+    }
+
+    #tablaCarrito #accioneselim{
+        width: 50px;
+        text-align: center;
+    }
+
+    .total-pagar #totalpagarcant{
+        width: 30%;
+        background-color: #161342;
+        color: #fff;
+        border-radius: 10px;
+        padding: 3px;
+        text-align: center;
+    }
+
+    .total-pagar #totalpagarcant:hover{
+        background-color: #11c700;
+        transition: 5000ms;
+    }
+
+    form #botonesDireccion{
+        text-align: center;
+        background-color: #161342;
+        color: #fff;
+        padding: 3px;
+        border-radius: 7px;        
+    }
+
+    form #botonesDireccion:hover{
+        background-color: #2db500;
+    }
+    form{
+        text-align: center;
+    }
+    form #derechap{
+        text-align: left;
+        font-size: 12px;
+        padding: 0px;
+        margin: 0px;
+    }

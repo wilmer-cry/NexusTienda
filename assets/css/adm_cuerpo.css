@@ -1,0 +1,42 @@
+#flujo{
+    margin-left:14.5%;
+    width: 85.5%;
+    padding-top: 2.5rem;
+}
+.container{
+    width: 100%;
+}
+.row{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+#titModulo{
+    margin-left: none;
+    margin-right: none;
+    background-color: #415c6b;
+    padding-top: 3.5rem;
+    margin-left: 14.5%;
+    width: 85.5%;
+}
+#titModulo h2{
+    color: #DBDBDD;
+    font-size: 20px;
+    padding-bottom: none;
+}
+#campo{ 
+    padding-right: 15%;
+    width: auto;
+}
+#enviar{
+    padding: 3px 3.5%;
+    width: auto;
+    color: #fff;
+}
+#buscador{
+    float: right;
+}
+#nuevo_reg{
+    padding: 3px 3.5%;
+    width: auto;
+    color: #fff;
+}

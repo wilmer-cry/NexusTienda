@@ -1,0 +1,70 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos del contenedor principal */
+.admin-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Estilos del encabezado (nav) */
+.admin-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.logout-button {
+    background-color: #f00;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Estilos de la barra lateral (menu) */
+.admin-sidebar {
+    background-color: #444;
+    color: #fff;
+    padding: 20px;
+    min-width: 250px;
+}
+
+.admin-sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.admin-sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.admin-sidebar ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Estilos del contenido principal */
+.admin-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+/* Media query para hacerlo responsivo */
+@media (max-width: 768px) {
+    .admin-container {
+        flex-direction: column-reverse;
+    }
+
+    .admin-sidebar {
+        min-width: 100%;
+    }
+}

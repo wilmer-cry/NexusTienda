@@ -1,0 +1,32 @@
+.sidebar {
+    height: 100%;
+    width: 14%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-top: 10px;
+    background-color: #212F3C;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .sidebar div {
+    padding-top: -5px;
+    padding-bottom:-5px;
+    padding-left: 15%;
+    font-size: 15px;
+    display: block;
+    font-size: 1.2rem;
+    }
+    .sidebar div a {
+        color: #fff;
+        font-size: 15px;
+        text-decoration: none;
+    }
+
+.sidebar div:hover {
+    background: #595B6C;
+}
+div ul li:hover {
+    background: red;
+}

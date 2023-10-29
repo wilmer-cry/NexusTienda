@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 1px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.container {
+    max-width: 97%;
+    margin: 1px auto;
+    padding: 2px;
+    background-color: #ffffff96;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product {
+    width: calc(15% - 15px); /* Ajusta el ancho para mostrar 5 productos en una fila */
+    margin-right: 1px;
+    margin-bottom: 20px;
+    border: 3px solid #F1F4FC;
+    padding: 5px;
+    border-radius: 10px; 
+}
+.product a img {
+    max-width: 100%;
+    height: 50%;
+}
+
+h4 {
+    font-size: 12px;
+    color: #21618C;
+    font-family: 'Arimo', sans-serif;
+    font-weight: bold;
+}
+
+p {
+    cursor: default;
+    font-size: 11.8px;
+    font-weight: 500;
+    line-height: normal;
+    /*max-width: 355px;*/
+    color: #5D6D7E;
+    font-family: 'Arimo', sans-serif;
+    margin-top: -8px;
+}
+.container {
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+.column {
+flex: 1;
+border: 1px solid #fff1f1;
+padding: 10px;
+margin-left: 10%;
+margin-right: 10%;
+
+}
+
+
+.bottom-price {
+position: relative;
+}
+
+#precio{
+    font-weight: bold;
+    color: #0FC000;
+}
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+    }
+
+    .column2 #contenido_producto p{
+        padding-top: -15px !important;
+    }

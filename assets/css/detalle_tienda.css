@@ -1,0 +1,15 @@
+.layout {
+    width: 1366px;
+    height: 768px;
+  
+    display: grid;
+    grid:
+      "foto_principal descripcion categorias" 1fr
+      / 1fr 1fr 1fr;
+    gap: 8px;
+  }
+  
+  .foto_principal { grid-area: foto_principal; }
+  .descripcion { grid-area: descripcion; }
+  .categorias { grid-area: categorias; }
+

@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.direccion-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.direccion-card a {
+    text-decoration: none;
+    color: #0077cc;
+}
+
+.direccion-card input[type="radio"] {
+    display: none;
+}
+
+.direccion-card.selected {
+    background-color: #0077cc;
+    color: #fff;
+    
+}
+.direccion-card p{
+    margin: 1px;
+    font-size: 12px;
+}
+
+.row-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#mensajeActlabel{
+    background-color:#2db500;
+    color: #fff;
+    width: 20%;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+#botonesFormss{
+    align-items: center;
+    text-align: center;
+}
+
+#botonesFormss button{
+    background-color: #0a0b1a;
+    padding-top: 7px;
+    padding-bottom: 9px;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+
+#botonesFormss button:hover{
+    background-color: #ff0000;
+    padding-top: 7px;
+    padding-bottom: 9px;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+#nuevaDireccionForm{
+    margin-right: 35%;
+    margin-left: 35%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
+
+}
+
+#nuevaDireccionForm input, #nuevaDireccionForm textarea, #nuevaDireccionForm select{
+    width: 100%;
+    border-radius: 10px;
+    padding: 7px;
+    border: 1px solid #0a0b1ace !important;
+}
+.btn-guardar{
+    color: #ffffff;
+    background-color: #0a071a;
+    width: 104%;
+    border-radius: 10px;
+}
+.btn-guardar:hover{
+    color: #ffffff;
+    background-color: #1dad00;
+}
+.btn-cancelar{
+    color: #ffffff;
+    background-color: #ff040488;
+    width: 100%;
+    border-radius: 10px;
+}
+.btn-cancelar:hover{
+    color: #ffffff;
+    background-color: #ff0000;
+}
