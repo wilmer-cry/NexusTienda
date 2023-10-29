@@ -16,7 +16,7 @@
                 echo "<img src='$imagen_path' alt='$pokemon_name' height='50'>";
             ?>
         </div>
-            <a href="carrito_compras.php"><i class="fa fa-shopping-cart"></i></a>
+            <a href="carrito_compras.php"><i class="<html lang="es">"></i></a>
         </div>
         <div class="login">
 <?php

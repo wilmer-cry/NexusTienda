@@ -1,16 +1,31 @@
-    <header>
+<?php
+$pokemon_id = mt_rand(1, 10);
+$response = json_decode(file_get_contents("https://pokeapi.co/api/v2/pokemon/$pokemon_id/"), true);
+if ($response) {
+    $pokemon_name = $response['name'];
+    $imagen_path = "../../pokeapi/$pokemon_name.png";
+    if (file_exists($imagen_path)) {
+    } else {
+    }
+} else {
+}
+?>
+ <header>
         <div class="logo">
             <img src="../../img/logo.png" alt="Logo de la Empresa">
         </div>
-        <nav>
-            <ul>
-            </ul>
-        </nav>
+
+            
         <div class="search-cart">
             <form action="prod_buscar.php" method="GET">
                 <input type="text" name="producto" placeholder="Buscar productos">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
+            <div>
+            <?php
+                echo "<img src='$imagen_path' alt='$pokemon_name' height='50'>";
+            ?>
+        </div>
             <a href="carrito/carrito_mostrar_producto.php"><i class="fa fa-shopping-cart"></i></a>
         </div>
         <div class="login">

@@ -15,26 +15,15 @@ foreach ($productos as $producto) : ?>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const productImages = document.querySelectorAll('.product-image img');
-        const desiredWidth = 819.75;
-        const desiredHeight = 534;
         const productNames = document.querySelectorAll('.product-name');
         const productDescriptions = document.querySelectorAll('.product-description');
 
-        productImages.forEach(img => {
-            const canvas = document.createElement('canvas');
-            canvas.width = desiredWidth;
-            canvas.height = desiredHeight;
-            const context = canvas.getContext('2d');
-            context.drawImage(img, 0, 0, desiredWidth, desiredHeight);
-            img.src = canvas.toDataURL(); 
-        });
-
         productNames.forEach(h4 => {
-            h4.style.minHeight = '25px'; 
+            h4.style.minHeight = '25px';
         });
 
         productDescriptions.forEach(p => {
-            p.style.minHeight = '50px'; 
+            p.style.minHeight = '50px';
         });
     });
 </script>

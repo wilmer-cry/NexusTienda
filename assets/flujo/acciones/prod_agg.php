@@ -3,7 +3,6 @@ require '../base_datos/database.php';
 session_start();
 $codigoperfil = $_SESSION['codigo'];
 
-
 function guardarImagen($nombreCampo, $nombre)
 {
     $nombreArchivo = $_FILES[$nombreCampo]['name'];
@@ -17,7 +16,21 @@ function guardarImagen($nombreCampo, $nombre)
     }
 
     move_uploaded_file($_FILES[$nombreCampo]['tmp_name'], $ruta);
+    
+    // Redimensionar y recortar
+    redimensionarYRecortarImagen($ruta, $ruta, 600, 400);
+    
     return $nuevoNombre;
+}
+
+function redimensionarYRecortarImagen($sourcePath, $destinationPath, $targetWidth, $targetHeight) {
+    list($sourceWidth, $sourceHeight, $sourceType) = getimagesize($sourcePath);
+    $sourceImage = imagecreatefromjpeg($sourcePath);
+    $destinationImage = imagecreatetruecolor($targetWidth, $targetHeight);
+    imagecopyresampled($destinationImage, $sourceImage, 0, 0, 0, 0, $targetWidth, $targetHeight, $sourceWidth, $sourceHeight);
+    imagejpeg($destinationImage, $destinationPath, 90);
+    imagedestroy($sourceImage);
+    imagedestroy($destinationImage);
 }
 
 function guardarImagenPrincipal($nombreCampo, $nombre)
@@ -35,6 +48,9 @@ function guardarImagenPrincipal($nombreCampo, $nombre)
         move_uploaded_file($_FILES[$nombreCampo]['tmp_name'], $ruta);
         $nuevoNombre = $nombreUnico;
     }
+
+    // Redimensionar y recortar también la foto principal
+    redimensionarYRecortarImagen($ruta, $ruta, 600, 400);
 
     return $nuevoNombre;
 }
@@ -61,9 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $caracteristicas = $_POST["caracteristicas"];
     $contenido_empaque = $_POST["contenido_empaque"];
 
-    
     $sku = "NEXUS-" . date('YmdHis') . $categoria;
-
     
     if (!empty($_FILES['foto_principal']['name'])) {
         $foto_principal = guardarImagenPrincipal('foto_principal', $nombre);
@@ -80,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sssdisssssssssss", $sku, $nombre, $descripcion, $precio, $existencias, $categoria, $subcategoria, $status, $foto_principal, $especificaciones, $caracteristicas, $contenido_empaque, $foto_uno, $foto_dos, $foto_tres, $codigoperfil);
 
     if ($stmt->execute()) {
-        echo "Producto agregado con éxito.";
+        header("location: producto_mostrar_todos.php ");
     } else {
         echo "Error al agregar el producto: " . $stmt->error;
     }

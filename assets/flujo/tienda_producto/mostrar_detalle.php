@@ -100,23 +100,54 @@ include 'seccion_recomendado.php';
 </style>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        var cantidadInput = document.getElementById("cantidadInput");
-        var agregarCarritoForm = document.getElementById("agregarCarritoForm");
+    function swapImages(imageId) {
+        var mainImage = document.getElementById("mainCell").getElementsByTagName("img")[0];
+        var clickedImage = document.getElementById(imageId).getElementsByTagName("img")[0];
 
-        agregarCarritoForm.addEventListener("submit", function (event) {
-            var cantidadSeleccionada = parseInt(cantidadInput.value);
-            var existencias = <?php echo $producto_detalle['existencias']; ?>;
+        var mainImageSrc = mainImage.src;
+        var clickedImageSrc = clickedImage.src;
 
-            if (isNaN(cantidadSeleccionada) || cantidadSeleccionada <= 0) {
-                alert("Ingrese una cantidad válida (número positivo).");
-                event.preventDefault(); 
-            } else if (cantidadSeleccionada > existencias) {
-                alert("La cantidad seleccionada supera la cantidad en existencia.");
-                event.preventDefault(); 
-            }
+        mainImage.src = clickedImageSrc;
+        clickedImage.src = mainImageSrc;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const productImages = document.querySelectorAll('.product-image img');
+        const desiredWidth = 380;
+        const desiredHeight = 217;
+
+        productImages.forEach(img => {
+            const canvas = document.createElement('canvas');
+            canvas.width = desiredWidth;
+            canvas.height = desiredHeight;
+            const context = canvas.getContext('2d');
+            context.drawImage(img, 0, 0, desiredWidth, desiredHeight);
+            img.src = canvas.toDataURL();
         });
+
+        const carousel = document.querySelector('.carousel');
+        const products = document.querySelectorAll('.product');
+        const groupSize = 6;
+        const totalProducts = 12;
+        let currentIndex = 0;
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalProducts;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const offset = -currentIndex * (100 / totalProducts);
+            carousel.style.transform = `translateX(${offset}%)`;
+        }
+
+        function startCarousel() {
+            setInterval(nextSlide, 2000);
+        }
+
+        startCarousel();
     });
 </script>
+
 </body>
 </html>

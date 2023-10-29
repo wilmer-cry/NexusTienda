@@ -1,3 +1,15 @@
+<?php
+$pokemon_id = mt_rand(1, 10);
+$response = json_decode(file_get_contents("https://pokeapi.co/api/v2/pokemon/$pokemon_id/"), true);
+if ($response) {
+    $pokemon_name = $response['name'];
+    $imagen_path = "../../../pokeapi/$pokemon_name.png";
+    if (file_exists($imagen_path)) {
+    } else {
+    }
+} else {
+}
+?>
 <header>
         <div class="logo">
             <img src="../../../img/logo.png" alt="Logo de la Empresa">
@@ -11,16 +23,21 @@
                 <input type="text" name="producto" placeholder="Buscar productos">
                 <button type="submit"><i class="fa fa-search"></i></button>
             </form>
-            <a href="carrito_compras.php"><i class="fa fa-shopping-cart"></i></a>
+            <div>
+            <?php
+                echo "<img src='$imagen_path' alt='$pokemon_name' height='50'>";
+            ?>
+        </div>
+            <a href="carrito_mostrar_producto.php"><i class="fa fa-shopping-cart"></i></a>
         </div>
         <div class="login">
 <?php
 include '../prod_obtener_cat_subcat.php';
 
 if (isset($_SESSION['usuario']) && isset($_SESSION['codigo'])) {
-    echo '<a href="../login/login.php" class="get-started-btn scrollto">ENTRAR</a>';
+    echo '<a href="../../login/login.php" class="get-started-btn scrollto">ENTRAR</a>';
 } else {
-    echo '<a href="../login/login.php" class="get-started-btn scrollto">INICIAR</a>';
+    echo '<a href="../../login/login.php" class="get-started-btn scrollto">INICIAR</a>';
 }
 ?>
         </div>

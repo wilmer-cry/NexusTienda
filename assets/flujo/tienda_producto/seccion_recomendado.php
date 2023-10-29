@@ -60,22 +60,9 @@ include "seccion_obt_recomendado.php"
 </style>
 
 <script>
-    const productImages = document.querySelectorAll('.product-image img');
-    const desiredWidth = 380;
-    const desiredHeight = 217;
-
-    productImages.forEach(img => {
-        const canvas = document.createElement('canvas');
-        canvas.width = desiredWidth;
-        canvas.height = desiredHeight;
-        const context = canvas.getContext('2d');
-        context.drawImage(img, 0, 0, desiredWidth, desiredHeight);
-        img.src = canvas.toDataURL(); 
-    });
-
     const carousel = document.querySelector('.carousel');
     const products = document.querySelectorAll('.product');
-    const groupSize = 6; 
+    const groupSize = 6;
     const totalProducts = 12;
     let currentIndex = 0;
 
@@ -90,7 +77,7 @@ include "seccion_obt_recomendado.php"
     }
 
     function startCarousel() {
-        setInterval(nextSlide, 2000); 
+        setInterval(nextSlide, 2000);
     }
 
     startCarousel();
